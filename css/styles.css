@@ -1,0 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
+
+html {
+  /*background: linear-gradient(45deg, red 0%, orange 100%);*/
+  height: 100%;
+  background: #eee;
+}
+
+body {
+  font-family: "Lato";
+}
+
+/* container */
+.container {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+
+}
+
+/* styling of input fields */
+input {
+  outline: 0;
+  border: 0;
+  border-bottom: 1px dotted black;
+  background: transparent;
+  font-size: 2em;
+  font-family: "Lato";
+  color: #fff;
+}
+
+/* color of input field placeholder text */
+input::-webkit-input-placeholder {
+color: #fff !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: #fff !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #fff !important;
+}
+
+input:-ms-input-placeholder {
+color: #fff !important;
+}
+
+.generator {
+  margin: 200px;
+}
+
+.canvasToPng {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  display: none;
+}
+
+.imageArea {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+}

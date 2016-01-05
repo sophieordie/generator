@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="generator">
+      <form class="generatorZone" action="index.html" method="post">
+            first name: <input class="firstName" type="text" placeholder="first name">
+                <div id="something"></div>
+            last name: <input class="second" type="text" placeholder="last name">
+            <br>
+            <button class="submit" type="submit" name="button">Subnit</button>
+                  <div id="somethingElse"></div>
+      </form>
+    </div>
+
+      <div class="canvasToPng" id="canvasHolder">
+
+        <canvas id="myCanvas" width="300" height="200"
+        style="border:1px solid #d3d3d3;">
+        Your browser does not support the canvas element.
+        </canvas>
+
+      </div>
+
+      <div class="imageArea" id="pngHolder">
+      </div>
+
+    </div>
+  </body>
+</html>
