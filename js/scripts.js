@@ -2,14 +2,28 @@ console.log('script loaded');
 
 // name generator
 
+// how it works:
+// user types, hits submit
+// hide the form
+// take content from input
+// check whether it is odd/even
+// choose respective content
+// append content to canvas
+// canvas to png
+// CELEBRATE
+// - fin -
+
+// once the page is ready
 $(document).ready(function() {
 
-  // this creates our canvas
+  // this creates our canvas on the page
   var canvas = document.getElementById("myCanvas");
+  // canvas styling
   var ctx=canvas.getContext("2d");
   ctx.font="30px Comic Sans MS";
   ctx.fillStyle = "pink";
   ctx.textAlign = "center";
+  // IF YOU WANT IT TO HAVE TEXT FROM THE START:
   // ctx.fillText("Name Generator", canvas.width/2, canvas.height/2);
 
   //this turns our canvas into a saveable, sharable image
@@ -19,61 +33,78 @@ $(document).ready(function() {
     return image;
   }
 
-  //this is gathering all of the page items
+  // action area - gathering our items on the page
   var sampleCanvas = document.getElementById("canvasHolder");
   document.getElementById("canvasHolder").appendChild(canvas);
   document.getElementById("pngHolder").appendChild(convertCanvasToImage(canvas));
-  function convertCanvasToImage(canvas) {
-  var image = new Image();
-  image.src = canvas.toDataURL("image/png");
-  return image;
-   }
 
+  // our event - when you click submit on the form
   $('.submit').click(function (e) {
       // stop normal form submit event (redirect)
       e.preventDefault();
+
+      // fade out the form
       $('form').fadeOut("linear");
 
-      //this is first name area
+      // these are grabbing values from the two input areas
+      // these start as dirty user input and are replaced by generated names
       var usersFirstName =  $('.firstName').val();
       var usersLastName = $('.lastName').val();
+
+      // this is combining the first and last name
       var fullName = usersFirstName + " " + usersLastName;
 
+      // where the magic happens:
+      // check char count is odd/even on first/last name
       genOne(usersFirstName);
       genTwo(usersLastName);
+
+      // then update the image
       updateTheImage(fullName);
   });
 
-  //updating the text of the canvas so i can make my img
+  // updating the canvas and create the img
   function updateTheImage(fullName){
     //if you have to clear the canvas...
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // ensure name values are up to date
     var fullname = usersFirstName + " " + usersLastName;
-    //replace the contents of the canvas with whatever name we choose
+    // replace the contents of the canvas
     ctx.fillText(fullname, canvas.width/2, canvas.height/2);
     ctx.textAlign = "center";
+    // put it on the page
     $('#pngHolder').replaceWith(convertCanvasToImage(canvas));
   }
 
-  // checking whether the name fits an override
-  // AND if the name is odd/even
+  // checking whether the first name is odd/even
   function genOne(usersFirstName) {
+    // capitalize first letter for consistensy
     var firstChar = $('.firstName').val().charAt(0).toUpperCase();
     var charCount = $('.firstName').val().length;
-    if (charCount % 2 === 0){
+    // override attempt
+    // if even charcount
+    if (usersFirstName = 'Ashley' && charCount % 2 === 0){
+      // choose from this bank of names
       evenFirst();
+      console.log('ashley');
     }
+    // if odd charcount
     else {
+      // choose from this bank of names
       oddFirst();
     }
   }
 
+  // checking whether the last name is odd/even
   function genTwo(usersLastName) {
+    // capitalize first letter for consistensy
     var firstCharLast = $('.lastName').val().charAt(0).toUpperCase();
     var charCountLast = $('.lastName').val().length;
+    // if even
     if (charCountLast % 2 === 0){
       evenLast();
     }
+    // if odd
     else {
       oddLast();
     }
@@ -303,6 +334,60 @@ $(document).ready(function() {
     else if (firstChar === 'H'){
       console.log('even amount of letters, first letter is H')
     }
+    else if (firstChar === 'I'){
+      console.log('even amount of letters, first letter is I')
+    }
+    else if (firstChar === 'J'){
+      console.log('even amount of letters, first letter is J')
+    }
+    else if (firstChar === 'K'){
+      console.log('even amount of letters, first letter is K')
+    }
+    else if (firstChar === 'L'){
+      console.log('even amount of letters, first letter is L')
+    }
+    else if (firstChar === 'M'){
+      console.log('even amount of letters, first letter is M')
+    }
+    else if (firstChar === 'N'){
+      console.log('even amount of letters, first letter is N')
+    }
+    else if (firstChar === 'O'){
+      console.log('even amount of letters, first letter is O')
+    }
+    else if (firstChar === 'P'){
+      console.log('even amount of letters, first letter is P')
+    }
+    else if (firstChar === 'Q'){
+      console.log('even amount of letters, first letter is Q')
+    }
+    else if (firstChar === 'R'){
+      console.log('even amount of letters, first letter is R')
+    }
+    else if (firstChar === 'S'){
+      console.log('even amount of letters, first letter is S')
+    }
+    else if (firstChar === 'T'){
+      console.log('even amount of letters, first letter is T')
+    }
+    else if (firstChar === 'U'){
+      console.log('even amount of letters, first letter is U')
+    }
+    else if (firstChar === 'V'){
+      console.log('even amount of letters, first letter is V')
+    }
+    else if (firstChar === 'W'){
+      console.log('even amount of letters, first letter is W')
+    }
+    else if (firstChar === 'X'){
+      console.log('even amount of letters, first letter is X')
+    }
+    else if (firstChar === 'Y'){
+      console.log('even amount of letters, first letter is Y')
+    }
+    else if (firstChar === 'Z'){
+      console.log('even amount of letters, first letter is Z')
+    }
   }
 
   //odd amount of letters
@@ -331,6 +416,60 @@ $(document).ready(function() {
     }
     else if (firstChar === 'H'){
       console.log('odd amount of letters, first letter is H')
+    }
+    else if (firstChar === 'I'){
+      console.log('odd amount of letters, first letter is I')
+    }
+    else if (firstChar === 'J'){
+      console.log('odd amount of letters, first letter is J')
+    }
+    else if (firstChar === 'K'){
+      console.log('odd amount of letters, first letter is K')
+    }
+    else if (firstChar === 'L'){
+      console.log('odd amount of letters, first letter is L')
+    }
+    else if (firstChar === 'M'){
+      console.log('odd amount of letters, first letter is M')
+    }
+    else if (firstChar === 'N'){
+      console.log('odd amount of letters, first letter is N')
+    }
+    else if (firstChar === 'O'){
+      console.log('odd amount of letters, first letter is O')
+    }
+    else if (firstChar === 'P'){
+      console.log('odd amount of letters, first letter is P')
+    }
+    else if (firstChar === 'Q'){
+      console.log('odd amount of letters, first letter is Q')
+    }
+    else if (firstChar === 'R'){
+      console.log('odd amount of letters, first letter is R')
+    }
+    else if (firstChar === 'S'){
+      console.log('odd amount of letters, first letter is S')
+    }
+    else if (firstChar === 'T'){
+      console.log('odd amount of letters, first letter is T')
+    }
+    else if (firstChar === 'U'){
+      console.log('odd amount of letters, first letter is U')
+    }
+    else if (firstChar === 'V'){
+      console.log('odd amount of letters, first letter is V')
+    }
+    else if (firstChar === 'W'){
+      console.log('odd amount of letters, first letter is W')
+    }
+    else if (firstChar === 'X'){
+      console.log('odd amount of letters, first letter is X')
+    }
+    else if (firstChar === 'Y'){
+      console.log('odd amount of letters, first letter is Y')
+    }
+    else if (firstChar === 'Z'){
+      console.log('odd amount of letters, first letter is Z')
     }
   }
 
