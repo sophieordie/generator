@@ -16,6 +16,14 @@ console.log('script loaded');
 // once the page is ready
 $(document).ready(function() {
 
+  $('.refresh').click(function (e) {
+      e.preventDefault();
+      $('form').fadeIn("linear");
+      $('myCanvas').remove();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      $('input').val('')
+    });
+
   // this creates our canvas on the page
   var canvas = document.getElementById("myCanvas");
   // canvas styling
@@ -34,10 +42,10 @@ $(document).ready(function() {
   }
 
   // action area - gathering our items on the page
+  function canvasImgCreator(){
   var sampleCanvas = document.getElementById("canvasHolder");
   document.getElementById("canvasHolder").appendChild(canvas);
-  document.getElementById("pngHolder").appendChild(convertCanvasToImage(canvas));
-
+  }
   // our event - when you click submit on the form
   $('.submit').click(function (e) {
       // stop normal form submit event (redirect)
@@ -56,6 +64,7 @@ $(document).ready(function() {
 
       // where the magic happens:
       // check char count is odd/even on first/last name
+      canvasImgCreator();
       genOne(usersFirstName);
       genTwo(usersLastName);
 
@@ -73,7 +82,7 @@ $(document).ready(function() {
     ctx.fillText(fullname, canvas.width/2, canvas.height/2);
     ctx.textAlign = "center";
     // put it on the page
-    $('#pngHolder').replaceWith(convertCanvasToImage(canvas));
+    document.getElementById("pngHolder").appendChild(convertCanvasToImage(canvas));
   }
 
   // checking whether the first name is odd/even
@@ -149,75 +158,75 @@ $(document).ready(function() {
     }
     else if (firstChar === 'I'){
       console.log('even amount of letters, first letter is I')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Samwell';
     }
     else if (firstChar === 'J'){
       console.log('even amount of letters, first letter is J')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Theon';
     }
     else if (firstChar === 'K'){
       console.log('even amount of letters, first letter is K')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Petyr';
     }
     else if (firstChar === 'L'){
       console.log('even amount of letters, first letter is L')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Varys';
     }
     else if (firstChar === 'M'){
       console.log('even amount of letters, first letter is M')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Brienne';
     }
     else if (firstChar === 'N'){
       console.log('even amount of letters, first letter is N')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Tywin';
     }
     else if (firstChar === 'O'){
       console.log('even amount of letters, first letter is O')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Sandor';
     }
     else if (firstChar === 'P'){
       console.log('even amount of letters, first letter is P')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Bronn';
     }
     else if (firstChar === 'Q'){
       console.log('even amount of letters, first letter is Q')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Joffrey';
     }
     else if (firstChar === 'R'){
       console.log('even amount of letters, first letter is R')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Catelyn';
     }
     else if (firstChar === 'S'){
       console.log('even amount of letters, first letter is S')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Bran';
     }
     else if (firstChar === 'T'){
       console.log('even amount of letters, first letter is T')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Stannis';
     }
     else if (firstChar === 'U'){
       console.log('even amount of letters, first letter is U')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Missandei';
     }
     else if (firstChar === 'V'){
       console.log('even amount of letters, first letter is V')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Robb';
     }
     else if (firstChar === 'W'){
       console.log('even amount of letters, first letter is W')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Tormund';
     }
     else if (firstChar === 'X'){
       console.log('even amount of letters, first letter is X')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Gendry';
     }
     else if (firstChar === 'Y'){
       console.log('even amount of letters, first letter is Y')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Ygritte';
     }
     else if (firstChar === 'Z'){
       console.log('even amount of letters, first letter is Z')
-      usersFirstName = 'Jamie';
+      usersFirstName = 'Daario';
     }
   }
 
@@ -226,81 +235,107 @@ $(document).ready(function() {
   var firstChar = $('.firstName').val().charAt(0).toUpperCase();
     if (firstChar === 'A'){
       console.log('odd amount of letters, first letter is A')
+      usersFirstName = 'Ramsay';
     }
     else if (firstChar === 'B'){
       console.log('odd amount of letters, first letter is B')
+      usersFirstName = 'Jaqen';
     }
     else if (firstChar === 'C'){
       console.log('odd amount of letters, first letter is C')
+      usersFirstName = 'Talisa';
     }
     else if (firstChar === 'D'){
       console.log('odd amount of letters, first letter is D')
+      usersFirstName = 'Ned';
     }
     else if (firstChar === 'E'){
       console.log('odd amount of letters, first letter is E')
+      usersFirstName = 'Drogo';
     }
     else if (firstChar === 'F'){
       console.log('odd amount of letters, first letter is F')
+      usersFirstName = 'Ellaria';
     }
     else if (firstChar === 'G'){
       console.log('odd amount of letters, first letter is G')
+      usersFirstName = 'Robert';
     }
     else if (firstChar === 'H'){
       console.log('odd amount of letters, first letter is H')
+      usersFirstName = 'Viserys';
     }
     else if (firstChar === 'I'){
       console.log('odd amount of letters, first letter is I')
+      usersFirstName = 'Grand Maester Pycelle';
     }
     else if (firstChar === 'J'){
       console.log('odd amount of letters, first letter is J')
+      usersFirstName = 'Barristan';
     }
     else if (firstChar === 'K'){
       console.log('odd amount of letters, first letter is K')
+      usersFirstName = 'Eddison';
     }
     else if (firstChar === 'L'){
       console.log('odd amount of letters, first letter is L')
+      usersFirstName = 'Podrick';
     }
     else if (firstChar === 'M'){
       console.log('odd amount of letters, first letter is M')
+      usersFirstName = 'Grenn';
     }
     else if (firstChar === 'N'){
       console.log('odd amount of letters, first letter is N')
+      usersFirstName = 'Hodor';
     }
     else if (firstChar === 'O'){
       console.log('odd amount of letters, first letter is O')
+      usersFirstName = 'Loras';
     }
     else if (firstChar === 'P'){
       console.log('odd amount of letters, first letter is P')
+      usersFirstName = 'Meryn';
     }
     else if (firstChar === 'Q'){
       console.log('odd amount of letters, first letter is Q')
+      usersFirstName = 'Grey Worm';
     }
     else if (firstChar === 'R'){
       console.log('odd amount of letters, first letter is R')
+      usersFirstName = 'Alliser';
     }
     else if (firstChar === 'S'){
       console.log('odd amount of letters, first letter is S')
+      usersFirstName = 'Janos';
     }
     else if (firstChar === 'T'){
       console.log('odd amount of letters, first letter is T')
+      usersFirstName = 'Osha';
     }
     else if (firstChar === 'U'){
       console.log('odd amount of letters, first letter is U')
+      usersFirstName = 'Maester Luwin';
     }
     else if (firstChar === 'V'){
       console.log('odd amount of letters, first letter is V')
+      usersFirstName = 'Rickton';
     }
     else if (firstChar === 'W'){
       console.log('odd amount of letters, first letter is W')
+      usersFirstName = 'Olly';
     }
     else if (firstChar === 'X'){
       console.log('odd amount of letters, first letter is X')
+      usersFirstName = 'Lancel';
     }
     else if (firstChar === 'Y'){
       console.log('odd amount of letters, first letter is Y')
+      usersFirstName = 'Seltse';
     }
     else if (firstChar === 'Z'){
       console.log('odd amount of letters, first letter is Z')
+      usersFirstName = 'Jojen';
     }
   }
 
@@ -311,82 +346,107 @@ $(document).ready(function() {
   var firstChar = $('.lastName').val().charAt(0).toUpperCase();
     if (firstChar === 'A'){
       console.log('even amount of letters, first letter is A')
-      usersLastName = 'Poop';
+      usersLastName = 'Lannister';
     }
     else if (firstChar === 'B'){
       console.log('even amount of letters, first letter is B')
+      usersLastName = 'Targaryen';
     }
     else if (firstChar === 'C'){
       console.log('even amount of letters, first letter is C')
+      usersLastName = 'Snow';
     }
     else if (firstChar === 'D'){
       console.log('even amount of letters, first letter is D')
+      usersLastName = 'Stark';
     }
     else if (firstChar === 'E'){
       console.log('even amount of letters, first letter is E')
+      usersLastName = 'Mormont';
     }
     else if (firstChar === 'F'){
       console.log('even amount of letters, first letter is F')
+      usersLastName = 'Tarly';
     }
     else if (firstChar === 'G'){
       console.log('even amount of letters, first letter is G')
+      usersLastName = 'Greyjoy';
     }
     else if (firstChar === 'H'){
       console.log('even amount of letters, first letter is H')
+      usersLastName = 'Baelish';
     }
     else if (firstChar === 'I'){
       console.log('even amount of letters, first letter is I')
+      usersLastName = 'Clegane';
     }
     else if (firstChar === 'J'){
       console.log('even amount of letters, first letter is J')
+      usersLastName = 'Baratheon';
     }
     else if (firstChar === 'K'){
       console.log('even amount of letters, first letter is K')
+      usersLastName = 'Seaworth';
     }
     else if (firstChar === 'L'){
       console.log('even amount of letters, first letter is L')
+      usersLastName = 'Bolton';
     }
     else if (firstChar === 'M'){
       console.log('even amount of letters, first letter is M')
+      usersLastName = 'Hghar';
     }
     else if (firstChar === 'N'){
       console.log('even amount of letters, first letter is N')
+      usersLastName = 'Drogo';
     }
     else if (firstChar === 'O'){
       console.log('even amount of letters, first letter is O')
+      usersLastName = 'Sand';
     }
     else if (firstChar === 'P'){
       console.log('even amount of letters, first letter is P')
+      usersLastName = 'Pycelle';
     }
     else if (firstChar === 'Q'){
       console.log('even amount of letters, first letter is Q')
+      usersLastName = 'Tollett';
     }
     else if (firstChar === 'R'){
       console.log('even amount of letters, first letter is R')
+      usersLastName = 'Payne';
     }
     else if (firstChar === 'S'){
       console.log('even amount of letters, first letter is S')
+      usersLastName = 'Thorne';
     }
     else if (firstChar === 'T'){
       console.log('even amount of letters, first letter is T')
+      usersLastName = 'Slynt';
     }
     else if (firstChar === 'U'){
       console.log('even amount of letters, first letter is U')
+      usersLastName = 'Luwin';
     }
     else if (firstChar === 'V'){
       console.log('even amount of letters, first letter is V')
+      usersLastName = 'Cassel';
     }
     else if (firstChar === 'W'){
       console.log('even amount of letters, first letter is W')
+      usersLastName = 'Lannister';
     }
     else if (firstChar === 'X'){
       console.log('even amount of letters, first letter is X')
+      usersLastName = 'Yarwyck';
     }
     else if (firstChar === 'Y'){
       console.log('even amount of letters, first letter is Y')
+      usersLastName = 'Rayder';
     }
     else if (firstChar === 'Z'){
       console.log('even amount of letters, first letter is Z')
+      usersLastName = 'Sparrow';
     }
   }
 
@@ -395,81 +455,107 @@ $(document).ready(function() {
   var firstChar = $('.lastName').val().charAt(0).toUpperCase();
     if (firstChar === 'A'){
       console.log('odd amount of letters, first letter is A')
+      usersLastName = 'Lannister';
     }
     else if (firstChar === 'B'){
       console.log('odd amount of letters, first letter is B')
+      usersLastName = 'Rayder';
     }
     else if (firstChar === 'C'){
       console.log('odd amount of letters, first letter is C')
+      usersLastName = 'Clegane';
     }
     else if (firstChar === 'D'){
       console.log('odd amount of letters, first letter is D')
+      usersLastName = 'Loraq';
     }
     else if (firstChar === 'E'){
       console.log('odd amount of letters, first letter is E')
+      usersLastName = 'zo Loraq';
     }
     else if (firstChar === 'F'){
       console.log('odd amount of letters, first letter is F')
+      usersLastName = 'Hollard';
     }
     else if (firstChar === 'G'){
       console.log('odd amount of letters, first letter is G')
+      usersLastName = 'Daxos';
     }
     else if (firstChar === 'H'){
       console.log('odd amount of letters, first letter is H')
+      usersLastName = 'Tully';
     }
     else if (firstChar === 'I'){
       console.log('odd amount of letters, first letter is I')
+      usersLastName = 'Cassel';
     }
     else if (firstChar === 'J'){
       console.log('odd amount of letters, first letter is J')
+      usersLastName = 'Cleftjaw';
     }
     else if (firstChar === 'K'){
       console.log('odd amount of letters, first letter is K')
+      usersLastName = 'Sand';
     }
     else if (firstChar === 'L'){
       console.log('odd amount of letters, first letter is L')
+      usersLastName = 'Bolton';
     }
     else if (firstChar === 'M'){
       console.log('odd amount of letters, first letter is M')
+      usersLastName = 'Rivers';
     }
     else if (firstChar === 'N'){
       console.log('odd amount of letters, first letter is N')
+      usersLastName = 'Greyjoy';
     }
     else if (firstChar === 'O'){
       console.log('odd amount of letters, first letter is O')
+      usersLastName = 'the Dommed';
     }
     else if (firstChar === 'P'){
       console.log('odd amount of letters, first letter is P')
+      usersLastName = 'mo Eraz';
     }
     else if (firstChar === 'Q'){
       console.log('odd amount of letters, first letter is Q')
+      usersLastName = 'Arryn';
     }
     else if (firstChar === 'R'){
       console.log('odd amount of letters, first letter is R')
+      usersLastName = 'the Frog';
     }
     else if (firstChar === 'S'){
       console.log('odd amount of letters, first letter is S')
+      usersLastName = 'Lannister';
     }
     else if (firstChar === 'T'){
       console.log('odd amount of letters, first letter is T')
+      usersLastName = 'the Strange';
     }
     else if (firstChar === 'U'){
       console.log('odd amount of letters, first letter is U')
+      usersLastName = 'the Rat';
     }
     else if (firstChar === 'V'){
       console.log('odd amount of letters, first letter is V')
+      usersLastName = 'Terys';
     }
     else if (firstChar === 'W'){
       console.log('odd amount of letters, first letter is W')
+      usersLastName = 'Nestoris';
     }
     else if (firstChar === 'X'){
       console.log('odd amount of letters, first letter is X')
+      usersLastName = 'zo Qaggaz';
     }
     else if (firstChar === 'Y'){
       console.log('odd amount of letters, first letter is Y')
+      usersLastName = 'the Giant';
     }
     else if (firstChar === 'Z'){
       console.log('odd amount of letters, first letter is Z')
+      usersLastName = 'Frey';
     }
   }
 

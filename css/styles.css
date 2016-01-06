@@ -50,6 +50,11 @@ color: #fff !important;
   margin: 200px;
 }
 
+.generator img {
+  width: 100%;
+  top: 0px;
+}
+
 .canvasToPng {
   height: 200px;
   width: 300px;
